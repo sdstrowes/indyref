@@ -3,7 +3,7 @@ function do_plot {
     survey=$1
 
     gnuplot <<EOF
-        set terminal pngcairo size 1200,800 font "Helvetica Neue,12pt"
+        set terminal pngcairo size 1000,700 font "Helvetica Neue,12pt"
         set output "plots/$survey.png"
 
         set linestyle 1 lt 1 lw 1.5 lc rgb "#1f77b4"
@@ -44,7 +44,7 @@ function do_bigger_plot {
     title=$3
 
     gnuplot <<EOF
-        set terminal pngcairo size 1200,800 font "Helvetica Neue,12pt"
+        set terminal pngcairo size 1000,700 font "Helvetica Neue,12pt"
         set output "plots/$out"
 
         set linestyle 1 lt 1 lw 1.5 lc rgb "#1f77b4"

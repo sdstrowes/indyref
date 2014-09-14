@@ -34,7 +34,7 @@ function do_plot {
                 '' using 1:3 w lines ls 2 ti "no",\
                 '' using 1:3:5 w yerrorbars noti ls 2,\
                 '' using 1:4 w lines ls 3 ti "undecided/won't vote",\
-                '' using 1:4:5 w lines ls 3 noti
+                '' using 1:4:5 w yerrorbars ls 3 noti
 
 EOF
 }

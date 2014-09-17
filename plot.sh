@@ -12,6 +12,12 @@ function do_plot {
         set linestyle 4 lt 4 lw 1.5 lc rgb "#d62728"
         set linestyle 5 lt 5 lw 1.5 lc rgb "#ac61c7"
 
+        set linestyle 6 lt 1 lw 0.5 pt 7 lc rgb "#1f77b4"
+        set linestyle 7 lt 2 lw 0.5 pt 7 lc rgb "#ff7f0e"
+        set linestyle 8 lt 3 lw 0.5 pt 7 lc rgb "#2ca02c"
+        set linestyle 9 lt 4 lw 0.5 pt 7 lc rgb "#d62728"
+        set linestyle 10 lt 5 lw 0.5 pt 7 lc rgb "#ac61c7"
+
         set xdata time
         set timefmt "%Y%m%d"
         set format x "%d-%b"
@@ -30,11 +36,11 @@ function do_plot {
         set ylabel "percent"
 
         plot "data/$survey.data" using 1:2 w lines ls 1 ti "yes",\
-                '' using 1:2:5 w yerrorbars notitle ls 1,\
+                '' using 1:2:5 w yerrorbars notitle ls 6,\
                 '' using 1:3 w lines ls 2 ti "no",\
-                '' using 1:3:5 w yerrorbars noti ls 2,\
+                '' using 1:3:5 w yerrorbars noti ls 7,\
                 '' using 1:4 w lines ls 3 ti "undecided/won't vote",\
-                '' using 1:4:5 w yerrorbars ls 3 noti
+                '' using 1:4:5 w yerrorbars ls 8 noti
 
 EOF
 }
@@ -53,6 +59,12 @@ function do_bigger_plot {
         set linestyle 3 lt 3 lw 1.5 lc rgb "#2ca02c"
         set linestyle 4 lt 4 lw 1.5 lc rgb "#d62728"
         set linestyle 5 lt 5 lw 1.5 lc rgb "#ac61c7"
+
+        set linestyle 6 lt 1 lw 0.5 pt 7 lc rgb "#1f77b4"
+        set linestyle 7 lt 2 lw 0.5 pt 7 lc rgb "#ff7f0e"
+        set linestyle 8 lt 3 lw 0.5 pt 7 lc rgb "#2ca02c"
+        set linestyle 9 lt 4 lw 0.5 pt 7 lc rgb "#d62728"
+        set linestyle 10 lt 5 lw 0.5 pt 7 lc rgb "#ac61c7"
 
         set xdata time
         set timefmt "%Y%m%d"
@@ -75,15 +87,15 @@ function do_bigger_plot {
         set title "$title"
 
         plot 'data/icm.data' using 1:$col w lines ls 1 ti "icm",\
-                '' using 1:$col:5 w yerrorbars notitle ls 1,\
+                '' using 1:$col:5 w yerrorbars notitle ls 6,\
                 'data/panelbase.data' using 1:$col w lines ls 2 ti "panelbase",\
-                '' using 1:$col:5 w yerrorbars noti ls 2,\
+                '' using 1:$col:5 w yerrorbars noti ls 7,\
                 'data/survation.data' using 1:$col w lines ls 3 ti "survation",\
-                '' using 1:$col:5 w yerrorbars noti ls 3,\
+                '' using 1:$col:5 w yerrorbars noti ls 8,\
                 'data/tns-bmrb.data' using 1:$col w lines ls 4 ti "tns-bmrb",\
-                '' using 1:$col:5 w yerrorbars noti ls 4,\
+                '' using 1:$col:5 w yerrorbars noti ls 9,\
                 'data/yougov.data' using 1:$col w lines ls 5 ti "yougov",\
-                '' using 1:$col:5 w yerrorbars noti ls 5
+                '' using 1:$col:5 w yerrorbars noti ls 10
 
 EOF
 }
